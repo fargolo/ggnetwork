@@ -139,7 +139,7 @@ fortify.network <- function(model, data = NULL,
   edges = network::as.matrix.network.edgelist(x, attrname = weights)
 
   # edge list (if there are duplicated rows)
-  if (nrow(edges[, 1:2, drop=FALSE]) > nrow(unique(edges[, 1:2]))) { # Added ', drop = FALSE' to fix bug on 1 edge 
+  if (nrow(edges[, 1:2, drop=FALSE]) > nrow(unique(edges[, 1:2], drop=FALSE))) { # Added ', drop = FALSE' to fix bug on 1 edge 
     warning("duplicated edges detected")
   }
 
